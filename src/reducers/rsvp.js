@@ -4,9 +4,10 @@ import { rsvp } from '../lib/rsvp'
 export default (state = rsvp, { type, payload } = {}) => {
   switch (type) {
     case ADD_RSVP :
-      return [payload]
+      return [payload, ...state]
 
-    default :
+
+      default :
       return state
   }
 }

@@ -9,10 +9,13 @@ class RsvpList extends PureComponent {
   }
 
   render() {
+
+    const array = this.props.rsvp.slice(0, 5)
+    
     return (
     <div>
-    { this.props.rsvp.map(one => {
-          return  <RsvpItem rsvpi={one} />
+    { array.map(one => {
+        return  <RsvpItem key={one.rsvp_id} rsvpi={one} />
           })}
 
       </div>
