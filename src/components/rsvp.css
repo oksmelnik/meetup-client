@@ -1,0 +1,67 @@
+.flex-container {
+  padding: 0;
+  margin: 0;
+  width: 600px;
+
+}
+
+.flex-item {
+  background: tomato;
+  display: flex;
+
+  margin: 5px;
+  color: white;
+  border-radius: 4px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+
+}
+
+.flex-image {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  width: 30%;
+  padding: 5px;
+  border-right: 1px solid grey;
+}
+
+.flex-image img {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+}
+
+.flex-image span {
+  margin-left: 10px;
+}
+
+.item-name {
+    text-align: left;
+    width: 65%;
+    align-items: center;
+    font-weight: bold;
+    padding-left: 10px;
+}
+
+.topList {
+  border: 2px solid grey;
+  border-radius: 4px;
+  color: grey;
+  padding: 5px;
+  height: 300px;
+  width: 300px;
+  text-align: left;
+}
+
+.title {
+  text-align: center;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+li {
+  padding-top: 5px;
+}
