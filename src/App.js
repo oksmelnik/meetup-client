@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import TopicsList from './components/TopicsList'
 import RsvpList from './components/RsvpList'
-import CityPicker from './components/CityPicker'
+import LocationPicker from './components/LocationPicker'
 
 class App extends Component {
   render() {
@@ -18,7 +18,7 @@ class App extends Component {
                   <div className="bounce2"></div>
                   <div className="bounce3"></div>
               </div>
-              <CityPicker />
+              <LocationPicker />
           </header>
 
           <div className='column'>

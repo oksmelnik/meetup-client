@@ -8,7 +8,7 @@ class RsvpList extends PureComponent {
 
   render() {
 
-    const array = this.props.rsvp.slice(0, 5)
+    const array = this.props.rsvp
 
     return (
         <div className='flex-container'>
