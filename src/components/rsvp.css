@@ -6,36 +6,36 @@
 }
 
 .flex-item {
-  background: tomato;
-  display: flex;
+    background: tomato;
+    display: flex;
 
-  margin: 5px;
-  color: white;
-  border-radius: 4px;
-  height: 70px;
-  display: flex;
-  align-items: center;
+    margin: 5px;
+    color: white;
+    border-radius: 4px;
+    height: 70px;
+    display: flex;
+    align-items: center;
 
 }
 
 .flex-image {
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  width: 30%;
-  padding: 5px;
-  border-right: 1px solid grey;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    width: 30%;
+    padding: 5px;
+    border-right: 1px solid grey;
 }
 
 .flex-image img {
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  margin: 5px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin: 5px;
 }
 
 .flex-image span {
-  margin-left: 10px;
+    margin-left: 10px;
 }
 
 .item-name {
@@ -44,24 +44,37 @@
     align-items: center;
     font-weight: bold;
     padding-left: 10px;
+
+}
+
+.item-name a {
+    color: #4a4848;
 }
 
 .topList {
-  border: 2px solid grey;
-  border-radius: 4px;
-  color: grey;
-  padding: 5px;
-  height: 300px;
-  width: 300px;
-  text-align: left;
+    border: 1px solid white;
+    border-radius: 4px;
+    color: dimgrey;
+    min-height: 300px;
+    width: 300px;
+    text-align: left;
+    background: #f2ebeb;
+    margin-top: 56px;
 }
 
 .title {
-  text-align: center;
-  text-decoration: underline;
-  font-weight: bold;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid;
+    padding: 10px;
 }
 
-li {
-  padding-top: 5px;
+.item:not(:last-child) {
+    border-bottom: 1px solid;
 }
+
+.item {
+    padding: 10px;
+  }

@@ -1,5 +1,6 @@
 .App {
   text-align: left;
+
 }
 
 .App-logo {
@@ -28,10 +29,16 @@
   to { transform: rotate(360deg); }
 }
 
+.body {
+    display: flex;
+    justify-content: center;
+    background: #fcf5f5;
+}
+
 .column {
     float: left;
     padding: 10px;
-    margin: 50px;
+    margin: 10px;
 }
 
 
@@ -63,11 +70,13 @@
 
 .choose-city {
   margin-top: 15px;
-
+  margin-left: 10px;
+  font-weight: bold;
+  color: #4a4848;
 }
 
 .choose-city select {
-  margin-left: 10px
+  margin: 10px
 }
 
 @-webkit-keyframes sk-bouncedelay {

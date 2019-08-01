@@ -1,6 +1,7 @@
 import React, {PureComponent} from 'react'
 import PropTypes from 'prop-types'
 import RsvpItem from './RsvpItem'
+import LocationPicker from './../components/LocationPicker'
 import { connect } from 'react-redux'
 
 
@@ -11,7 +12,10 @@ class RsvpList extends PureComponent {
     const array = this.props.rsvp
 
     return (
+
+
         <div className='flex-container'>
+              <LocationPicker />
             {
               array.map(one => {
                 return  <RsvpItem key={one.rsvp_id} rsvpi={one} />
