@@ -1,23 +1,32 @@
-import React, {PureComponent} from 'react'
-import PropTypes from 'prop-types'
-import RsvpList from './RsvpList'
-import './rsvp.css';
+import React, { PureComponent} from 'react'
 
+import RsvpList from './RsvpList'
+import icon from './../resource/icon.svg'
+import './rsvp.css';
 
 
 class RsvpItem extends PureComponent {
 
-  static propTypes = {
+  getImage() {
+    if (this.props.rsvpi.member.photo) {
+      return this.props.rsvpi.member.photo
+    }
+    return icon
   }
-
   render() {
+      const userImage = this.getImage()
 
-    return (
-      <ul class='flex-container'>
-      <li class="flex-item">{this.props.rsvpi.event.event_name}</li>
-      <li class="flex-item"><img src={this.props.rsvpi.member.photo}/></li>
-      <li class="flex-item">{this.props.rsvpi.member.member_name}</li>
-      </ul>
+      return (
+          <div className="flex-item">
+              <div className="flex-image">
+                  <img src={userImage}/>
+                  <span>{this.props.rsvpi.member.member_name}</span>
+              </div>
+
+              <div className="item-name"><a href={this.props.rsvpi.event.event_url}>
+              {this.props.rsvpi.event.event_name}</a></div>
+          </div>
+
     )
   }
 }

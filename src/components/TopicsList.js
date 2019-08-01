@@ -15,18 +15,19 @@ class TopicsList extends PureComponent {
     if (!topics) return null
 
     return (
-<div>
-    Topics Top 10
-    <ol>
-    {topics.map(topic => {
-      return(
-        <li>
-        {topic.topic} ({topic.count})
-        </li>)
-    }
-    )}
-    </ol>
-    </div>
+        <div className='topList'>
+            <div className='title'>Popular topics</div>
+
+            <div>
+                {topics.map(topic => {
+                    return(
+                        <div className="item">
+                            {topic.index} {topic.topic} {topic.count}
+                        </div>)
+                    })
+                }
+            </div>
+          </div>
     )
   }
 }
