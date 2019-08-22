@@ -15,7 +15,7 @@ class App extends Component {
 
           <header className="App-header">
 
-              <h1 className="App-title"></h1>
+              <h1 className="App-title">Real time meetup.com rsvps</h1>
 
               <div className="spinner">
                   <div className="bounce1"></div>
