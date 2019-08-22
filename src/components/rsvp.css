@@ -63,16 +63,24 @@
 }
 
 .title {
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     font-weight: bold;
     font-size: 20px;
-    margin-bottom: 10px;
-    border-bottom: 1px solid;
+    border-bottom: 1px solid #a39595;
+    padding: 5px;
+    color: #4a4848;
     padding: 10px;
 }
 
+.title img {
+    height: 25px;
+    margin: 10px;
+}
+
 .item:not(:last-child) {
-    border-bottom: 1px solid;
+    border-bottom: 1px solid #a39595;
 }
 
 .item {

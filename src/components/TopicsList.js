@@ -1,22 +1,28 @@
 import React, {PureComponent} from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
+import starIcon from '../resource/star.svg'
+
 
 class TopicsList extends PureComponent {
-  static propTypes = {
-  topics: PropTypes.arrayOf(PropTypes.shape({
-    topic: PropTypes.string.isRequired,
-    count: PropTypes.number.isRequired
-  })).isRequired
-}
+    static propTypes = {
+        topics: PropTypes.arrayOf(PropTypes.shape({
+          topic: PropTypes.string.isRequired,
+          count: PropTypes.number.isRequired
+        })).isRequired
+    }
 
-  render() {
-    const {topics} = this.props
-    if (!topics) return null
+    render() {
+        const {topics} = this.props
+        if (!topics) return null
+
 
     return (
         <div className='topList'>
-            <div className='title'>Popular topics</div>
+            <div className='title'>
+                Most popular
+                <img src={starIcon} />
+            </div>
 
             <div>
                 {topics.map(topic => {
@@ -27,6 +33,7 @@ class TopicsList extends PureComponent {
                     })
                 }
             </div>
+
           </div>
     )
   }

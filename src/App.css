@@ -11,9 +11,12 @@
 .App-header {
   margin-top: 20px;
   background-color: #00455d;
-  height: 100px;
+  height: 50px;
   padding: 20px;
   color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .App-title {
