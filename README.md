@@ -7,6 +7,7 @@ to meet and talk with other people about a topic that you like.
 * Learn about and work with real-time data
 * Understand the concept of Websockets 
 * Connect a frontend (React/Redux) with a backend (NodeJS)
+* try Hooks
 
 Link to the server:
 
