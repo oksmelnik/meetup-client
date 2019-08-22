@@ -13,3 +13,5 @@ Link to the server:
 
 [Server](https://github.com/oksmelnik/meetup)
 
+![](meet-gif.gif)
+
