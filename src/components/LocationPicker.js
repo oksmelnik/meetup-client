@@ -40,23 +40,25 @@ const LocationPicker = ({state, changeCountry}) => {
     }
 
     return (
-        <form className={classes.root} autoComplete="off">
-            <FormControl className={classes.formControl}>
-                <InputLabel htmlFor="id-simple">Location</InputLabel>
-                <Select
-                    value={values.id}
-                    onChange={handleChange}
-                    inputProps={{
-                      name: 'id',
-                      id: 'id-simple',
-                    }}
-                >
-                    <MenuItem value={'nl'}>Netherlands</MenuItem>
-                    <MenuItem value={'de'}>Germany</MenuItem>
-                    <MenuItem value={'gb'}>UK</MenuItem>
-                </Select>
-            </FormControl>
-        </form>
+        <div className='choose-city'>
+            <form className={classes.root} autoComplete="off">
+                <FormControl className={classes.formControl}>
+                    <InputLabel htmlFor="id-simple">Location</InputLabel>
+                    <Select
+                        value={values.id}
+                        onChange={handleChange}
+                        inputProps={{
+                          name: 'id',
+                          id: 'id-simple',
+                        }}
+                    >
+                        <MenuItem value={'nl'}>Netherlands</MenuItem>
+                        <MenuItem value={'de'}>Germany</MenuItem>
+                        <MenuItem value={'gb'}>UK</MenuItem>
+                    </Select>
+                </FormControl>
+            </form>
+        </div>
     )
 }
 

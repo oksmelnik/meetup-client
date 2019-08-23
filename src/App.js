@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-
 import './App.css';
 import TopicsList from './components/TopicsList'
 import RsvpList from './components/RsvpList'
+import LocationPicker from './components/LocationPicker'
 
 
 class App extends Component {
@@ -24,6 +24,8 @@ class App extends Component {
               </div>
 
           </header>
+
+              <LocationPicker />
 
               <div className='column'>
                   <RsvpList />
