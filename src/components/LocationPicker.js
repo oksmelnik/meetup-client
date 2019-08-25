@@ -29,23 +29,15 @@ const LocationPicker = ({state, changeCountry}) => {
     }));
 
       const classes = useStyles();
-      const [value, setValues] = useState(
-      'nl'
-    );
+
+      const [country, setCountry] = useState('nl');
 
       function handleChange(event) {
+          setCountry(event.target.value);
 
-          setValues(event.target.value);
-
-          changeCountry(event.target.value)
-
-          function changeCountry(id) {
-            request
-              .get(`${baseUrl}/country/${id}`)
-              .then(() => {
-            })
-              .catch(err => alert(err))
-          }
+          request
+            .get(`${baseUrl}/country/${event.target.value}`)
+            .catch(err => alert(err))
       }
 
     return (
@@ -54,7 +46,7 @@ const LocationPicker = ({state, changeCountry}) => {
                 <FormControl className={classes.formControl}>
                     <InputLabel htmlFor="id-simple">Location</InputLabel>
                     <Select
-                        value={value}
+                        value={country}
                         onChange={handleChange}
                     >
                         <MenuItem value={'nl'}>Netherlands</MenuItem>
