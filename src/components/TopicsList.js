@@ -15,8 +15,7 @@ class TopicsList extends PureComponent {
     render() {
         const {topics} = this.props
         if (!topics) return null
-
-
+        console.log(topics)
     return (
         <div className='topList'>
             <div className='title'>
