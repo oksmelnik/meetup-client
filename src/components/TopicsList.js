@@ -33,7 +33,6 @@ class TopicsList extends PureComponent {
                     })
                 }
             </div>
-
           </div>
     )
   }
