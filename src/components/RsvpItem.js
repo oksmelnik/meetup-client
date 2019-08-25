@@ -15,7 +15,6 @@ class RsvpItem extends PureComponent {
   }
   render() {
       const userImage = this.getImage()
-
       return (
           <div className="flex-item">
               <div className="flex-image">
@@ -23,8 +22,17 @@ class RsvpItem extends PureComponent {
                   <span>{this.props.rsvpi.member.member_name}</span>
               </div>
 
-              <div className="item-name"><a href={this.props.rsvpi.event.event_url}>
-              {this.props.rsvpi.event.event_name}</a></div>
+              <div className="item-name">
+                  <a href={this.props.rsvpi.event.event_url}>
+                      {this.props.rsvpi.event.event_name}
+                  </a>
+                  <div>
+                      {this.props.rsvpi.group.group_city}
+                  </div>
+              </div>
+
+
+
           </div>
 
     )

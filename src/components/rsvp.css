@@ -36,21 +36,24 @@
 
 .flex-image span {
     margin-left: 10px;
+
 }
 
 .item-name {
-    text-align: left;
     width: 65%;
     align-items: center;
-    font-weight: bold;
     padding-left: 10px;
-
-}
-
-.item-name a {
     color: #4a4848;
 }
 
+.item-name a {
+    font-weight: bold;
+    color: #4a4848;
+}
+
+.item-name div {
+    padding-top: 5px;
+}
 .topList {
     border: 1px solid white;
     border-radius: 4px;
