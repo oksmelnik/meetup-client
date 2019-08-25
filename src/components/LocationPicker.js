@@ -7,9 +7,13 @@ import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import { makeStyles } from "@material-ui/core/styles";
+import * as request from 'superagent'
+
+const baseUrl = 'http://localhost:3002'
 
 
 const LocationPicker = ({state, changeCountry}) => {
+
     const useStyles = makeStyles(theme => ({
         root: {
           display: 'flex',
@@ -25,19 +29,24 @@ const LocationPicker = ({state, changeCountry}) => {
     }));
 
       const classes = useStyles();
-      const [values, setValues] = useState({
-          id: 'nl',
-          name: 'nl',
-      });
+      const [value, setValues] = useState(
+      'nl'
+    );
 
       function handleChange(event) {
 
-        setValues(oldValues => ({
-            ...oldValues,
-            [event.target.name]: event.target.value,
-        }));
-        changeCountry(event.target.value)
-    }
+          setValues(event.target.value);
+
+          changeCountry(event.target.value)
+
+          function changeCountry(id) {
+            request
+              .get(`${baseUrl}/country/${id}`)
+              .then(() => {
+            })
+              .catch(err => alert(err))
+          }
+      }
 
     return (
         <div className='choose-city'>
@@ -45,12 +54,8 @@ const LocationPicker = ({state, changeCountry}) => {
                 <FormControl className={classes.formControl}>
                     <InputLabel htmlFor="id-simple">Location</InputLabel>
                     <Select
-                        value={values.id}
+                        value={value}
                         onChange={handleChange}
-                        inputProps={{
-                          name: 'id',
-                          id: 'id-simple',
-                        }}
                     >
                         <MenuItem value={'nl'}>Netherlands</MenuItem>
                         <MenuItem value={'de'}>Germany</MenuItem>
@@ -62,8 +67,4 @@ const LocationPicker = ({state, changeCountry}) => {
     )
 }
 
-const mapStateToProps = ({state}) => {
-  state
-}
-
-export default connect(mapStateToProps, { changeCountry })(LocationPicker)
+export default LocationPicker
