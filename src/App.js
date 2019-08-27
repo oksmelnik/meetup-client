@@ -1,13 +1,27 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import './App.css';
-import TopicsList from './components/TopicsList'
-import RsvpList from './components/RsvpList'
+import io from 'socket.io-client'
+import { addPayload, addTopics } from './actions/actions'
+import {connect} from 'react-redux'
+
 import LocationPicker from './components/LocationPicker'
 
 
-class App extends Component {
+class App extends PureComponent {
 
   render() {
+
+    const socket = io.connect('http://localhost:3002')
+
+    socket.on('action', input => {
+
+        if (input.type === 'ADD_RSVP') {
+
+            this.props.addPayload(input.payload, this.props.state.loading)
+        } else if (input.type === 'UPDATE_TOPIC') {
+              this.props.addTopics(input.payload)
+        }
+    })
 
     return (
     <div className='body'>
@@ -27,18 +41,13 @@ class App extends Component {
 
               <LocationPicker />
 
-              <div className='column'>
-                  <RsvpList />
-              </div>
-
-              <div className='column'>
-                  <TopicsList />
-              </div>
 
           </div>
       </div>
     );
   }
 }
-
-export default App;
+const mapStateToProps = (state) => ({
+  state
+})
+ export default connect(mapStateToProps, {addPayload, addTopics})(App)

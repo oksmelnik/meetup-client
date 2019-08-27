@@ -15,7 +15,7 @@ class TopicsList extends PureComponent {
     render() {
         const {topics} = this.props
         if (!topics) return null
-        console.log(topics)
+
     return (
         <div className='topList'>
             <div className='title'>
@@ -37,5 +37,5 @@ class TopicsList extends PureComponent {
   }
 }
 
-const mapStateToProps = ({ topics }) => ({ topics })
+const mapStateToProps = ({ topics}) => ({ topics})
 export default connect(mapStateToProps)(TopicsList)
