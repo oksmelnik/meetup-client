@@ -13,7 +13,6 @@ class RsvpList extends PureComponent {
 
     return (
 
-
         <div className='flex-container'>
 
             {

@@ -9,15 +9,12 @@ import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 
+
 import { makeStyles } from "@material-ui/core/styles";
 import * as request from 'superagent'
 
 
-
-const baseUrl = 'http://localhost:3002'
-
-
-const LocationPicker = ({state, changeCountry}) => {
+const LocationPicker = ({changeCountry, loading}) => {
 
     const useStyles = makeStyles(theme => ({
         root: {
@@ -32,25 +29,18 @@ const LocationPicker = ({state, changeCountry}) => {
           marginTop: theme.spacing(2),
         },
     }));
-
+      console.log(loading)
       const classes = useStyles();
 
       const [country, setCountry] = useState('nl');
       const [disabled, setDisabled] = useState(false)
 
       function handleChange(event) {
-
           setCountry(event.target.value);
-
-          request
-            .get(`${baseUrl}/country/${event.target.value}`)
-            .then(() => {
-                setDisabled(true)
-            })
-            .catch(err => alert(err))
+          changeCountry(event.target.value)
       }
 
-    const columnState = disabled ? 'column--disabled' :'column'
+    const columnState = loading ? 'column--disabled' :'column'
 
     return (
         <div>
@@ -65,6 +55,7 @@ const LocationPicker = ({state, changeCountry}) => {
                             <MenuItem value={'nl'}>Netherlands</MenuItem>
                             <MenuItem value={'de'}>Germany</MenuItem>
                             <MenuItem value={'gb'}>UK</MenuItem>
+                            <MenuItem value={'us'}>US</MenuItem>
                         </Select>
                     </FormControl>
                 </form>
@@ -81,4 +72,8 @@ const LocationPicker = ({state, changeCountry}) => {
     )
 }
 
-export default LocationPicker
+const mapStateToProps = (state) => ({
+  loading: state.loading
+})
+
+ export default connect(mapStateToProps, { changeCountry })(LocationPicker)
