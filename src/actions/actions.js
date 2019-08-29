@@ -6,6 +6,7 @@ export const ADD_RSVP = 'ADD_RSVP'
 export const UPDATE_TOPIC = 'UPDATE_TOPIC'
 export const SET_LOADING = 'SET_LOADING'
 
+
 export const addPayload = (payload, loading) => (dispatch) => {
 
     dispatch(
@@ -21,7 +22,6 @@ export const addPayload = (payload, loading) => (dispatch) => {
               payload: false
           })
     }
-
 }
 
 export const addTopics = (payload) => (dispatch) => {
