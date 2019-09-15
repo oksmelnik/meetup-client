@@ -11,7 +11,7 @@ Open terminal, run "yarn install" start or "npm install" depending on your setup
 * Learn about and work with real-time data
 * Understand the concept of Websockets 
 * Connect a frontend (React/Redux) with a backend (NodeJS)
-* try Hooks
+* get familiar Hooks
 
 Link to the server:
 
